@@ -1,0 +1,37 @@
+{% extends 'index.html' %} {% block title %} Edit {% endblock %} {% block
+content %}
+<!-- Notify user of missing form data -->
+{% for msg in get_flashed_messages() %}
+<h2>{{msg}}</h2>
+{% endfor %}
+<div id="form-container">
+  <form id="add-user" method="POST" action="/users/add">
+    <label for="first_name" class="form-input">First Name</label>
+    <input
+      type="text"
+      name="first_name"
+      class="form-input"
+      value="{{user.first_name}}"
+    />
+
+    <label for="last_name" class="form-input">Last Name</label>
+    <input type="text" name="last_name" value="{{user.last_name}}" />
+
+    <label for="image_url" class="form-input">Image URL</label>
+    <input
+      type="text"
+      name="image_url"
+      class="form-input"
+      value="{{user.image_url}}"
+    />
+    <button type="submit">Save Changes</button>
+    <input
+      class="button"
+      type="button"
+      onclick="window.location.href='/users/{{user.id}}'"
+      value="Cancel"
+    />
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+html {
+    background-color: rgb(141, 209, 211);
+    color:rgb(120, 3, 124);
+}
+
+h2 {
+    margin-left:10%;
+    display:inline-block;
+}
+
+#user-list{
+    margin-left:10%;
+    font:2rem;
+}
+#image-container {
+    display:inline-block;
+}
+#profile-pic{
+    width:250px;
+    height:250px;
+}
+#form-container {
+    display:grid;
+    align-items:flex-end;
+    flex-wrap:wrap;
+}
