@@ -16,4 +16,18 @@ content %}
     </button>
   </form>
 </div>
+{% if posts %}
+<h3>Posts</h3>
+<ul>
+  {% for post in posts %}
+  <li>{{post.title}}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+<form>
+  <button class="button" formaction="/users/{{user.id}}/new_post">
+    Add Post
+  </button>
+</form>
+
 {% endblock %}

@@ -19,8 +19,8 @@ h2 {
     width:250px;
     height:250px;
 }
-#form-container {
+#add-user {
+    margin-left:auto;
     display:grid;
-    align-items:flex-end;
-    flex-wrap:wrap;
+    grid-template-columns:20% 20%
 }

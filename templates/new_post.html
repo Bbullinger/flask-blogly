@@ -1,0 +1,20 @@
+{% extends 'index.html' %} {% block title %} Add Post {% endblock %} {% block
+content %} {% for msg in get_flashed_messages() %}
+<h2>{{msg}}</h2>
+{% endfor %}
+<div id="container-add-post">
+  <form method="POST" action="/users/{{user.id}}/new_post">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" name="title" class="form-input" />
+    <label for="content" class="form-label">Content</label>
+    <input type="text" name="content" class="form-input" id="post-content" />
+    <button type="submit">Add</button>
+  </form>
+  <input
+    class="button"
+    type="button"
+    onclick="window.location.href='/users/{{user.id}}'"
+    value="Cancel"
+  />
+</div>
+{% endblock %} []
