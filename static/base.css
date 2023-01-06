@@ -24,3 +24,6 @@ h2 {
     display:grid;
     grid-template-columns:20% 20%
 }
+#post-content {
+    width: 15rem
+}

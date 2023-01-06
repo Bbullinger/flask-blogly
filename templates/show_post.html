@@ -1,0 +1,23 @@
+{% extends 'index.html' %} {% block title %} {{post.title}} {% endblock %} {%
+block content %}
+<h1>{{post.title}}</h1>
+<div id="post-container">
+  <p>{{post.content}}</p>
+  <h5>By{{post.author.full_name()}}</h5>
+  <p>{{post.created_at}}</p>
+</div>
+<div id="add-delete-container">
+  <form>
+    <button class="button" formaction="/show_post/{{post.id}}/edit">
+      Edit
+    </button>
+    <button
+      class="button"
+      formaction="/show_post/{{post.id}}/delete"
+      formmethod="POST"
+    >
+      Delete
+    </button>
+  </form>
+</div>
+{% endblock %}

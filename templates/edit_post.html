@@ -1,0 +1,30 @@
+{% extends 'index.html' %} {% block title %} {{post.title}} {% endblock %} {%
+block content %}
+<div id="container-add-post">
+  <form method="POST" action="/show_post/{{post.id}}/edit">
+    <label for="title" class="form-label">Title</label>
+    <input
+      type="text"
+      name="title"
+      class="form-input"
+      placeholder="{{post.title}}"
+    />
+    <label for="content" class="form-label">Content</label>
+    <input
+      type="text"
+      name="content"
+      class="form-input"
+      id="post-content"
+      placeholder="{{post.content}}"
+    />
+    <button type="submit">Edit</button>
+  </form>
+  <input
+    class="button"
+    type="button"
+    onclick="window.location.href='/show_post/{{post.id}}'"
+    value="Cancel"
+  />
+</div>
+
+{% endblock %}
